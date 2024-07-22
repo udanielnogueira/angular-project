@@ -153,6 +153,8 @@ Documentação
 - https://material.angular.io/guides
 - https://material.angular.io/components/categories
 
+## Adicionando Schematic de Cadastro
+
 Schematics em guides
 - https://material.angular.io/guide/schematics
 - Execute `ng generate @angular/material:address-form pages/cadastro`
@@ -185,6 +187,8 @@ Edite
 - login.component.html
 - cadastro.component.html
 - cadastro.component.ts
+
+## Schematic de Navegação
 
 Mudando o header
 - Crie um schematic de navegação
