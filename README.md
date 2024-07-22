@@ -2,6 +2,10 @@
 
 Projeto em Angular do Advanced Front-End na Pós-graduação em Desenvolvimento Full-Stack.
 
+## 1 Apresentação
+
+Aula 1 do Advanced Front-End.
+
 ## 2 Introdução ao Angular
 
 Aula 2 do Advanced Front-End.
@@ -130,3 +134,69 @@ Copie o style do app.component.html
 
 Crie um componente footer ``ng g component components/footer``
 - Adicione o footer na home assim como feito no header
+
+## 3 Angular Material e Rotas
+
+Aula 3 do Advanced Front-End.
+
+## Angular Material
+
+Usaremos
+- https://material.angular.io/
+- https://material.angular.io/guide/getting-started
+
+Angular Material
+- Voltado para Mobile First
+- Excute dentro de my-app `ng add @angular/material`
+
+Documentação
+- https://material.angular.io/guides
+- https://material.angular.io/components/categories
+
+Schematics em guides
+- https://material.angular.io/guide/schematics
+- Execute `ng generate @angular/material:address-form pages/cadastro`
+
+Adicione a rota do cadastro
+- No app.routes.ts
+
+```ts
+import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { ListarComponent } from './pages/listar/listar.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+
+export const routes: Routes = [
+    {path:'', redirectTo: '/home', pathMatch: 'full'},
+    {path:'home', component: HomeComponent},
+    {path:'listar', component: ListarComponent},
+    {path:'cadastro', component: CadastroComponent}
+];
+```
+
+Sempre veja exemplos
+- https://material.angular.io/components/card/overview
+- https://material.angular.io/components/card/examples
+
+Login component
+- Usando o mesmo form do cadastro com o nome de login
+
+Edite
+- login.component.html
+- cadastro.component.html
+- cadastro.component.ts
+
+Mudando o header
+- Crie um schematic de navegação
+- Execute `ng generate @angular/material:navigation pages/main`
+- Depois pegue o selector dele e coloque a tag no app.component.html
+- E faça o import dele no app.components.ts
+
+~~~html
+<app-main></app-main>
+~~~
+
+- Recorte o router e cole no main.component.html abaixo de content
+- Importe o routerOutlet no main.component.ts
+- Tire o header do home.component.html
+- Mude os links do main
